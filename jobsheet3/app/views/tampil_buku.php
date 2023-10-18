@@ -15,10 +15,10 @@ include 'bootstrap.php';
 ?>
 
 <div class="px-5 py-5">
-    <h3>Data buku</h3> <br>
-<a href="input_buku.php" class="btn btn-primary mb-3">Tambah buku</a>
 
 <?php
+error_reporting(E_ERROR | E_PARSE);
+
 if ($_GET['success'] === "tambah") {
     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
   <strong>Data Buku Berhasil Di Tambahkan<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -33,6 +33,10 @@ if ($_GET['success'] === "tambah") {
 </div>';
 }
 ?>
+
+    <h3>Data buku</h3> <br>
+<a href="input_buku.php" class="btn btn-primary mb-3">Tambah buku</a>
+
 
 <table border="1" class="table">
 <tr>

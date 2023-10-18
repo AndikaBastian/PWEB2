@@ -19,25 +19,24 @@
     }
 
     echo "</br> perulangan DO...WHile bilangan prima kurang dari 20 </br>";
-    $z=1;
-    function isPrime($number) {
-        if ($number <= 1) {
-            return false;
-        }
-        for ($z = 2; $z < $number; $z++) {
-            if ($number % $z == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
+    $num = 2;
 
     do {
-        if (isPrime($z)) {
-            echo "$z </br>";
+        $isPrime = true;
+        
+        for ($i = 2; $i < $num; $i++) {
+            if ($num % $i === 0) {
+                $isPrime = false;
+                break;
+            }
         }
-        $z++;
-    } while ($z < 20);
-    ?>
-</body>
-</html>
+
+        if ($isPrime) {
+            echo $num . "</br>";
+        }
+        
+        $num++;
+    } while ($num < 20);
+        ?>
+    </body>
+    </html>

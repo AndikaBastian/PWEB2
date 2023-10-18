@@ -30,7 +30,7 @@ $db=new Database();
             <h3><input type="text" name="nama" value="<?php echo $d['nama'] ?>"></h3>
       
             <h3>alamat:</h3>
-            <h3><input type="text" name="alamat" value="<?php echo $d['alamat'] ?>"</h3>
+            <h3><input type="text" name="alamat" value="<?php echo $d['alamat'] ?>"></h3>
             
             <div style="text-align: right">
             <h3><button type="submit" class="btn btn-success mt-3" value="simpan">Simpan</button></h3>
