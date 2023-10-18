@@ -45,7 +45,7 @@ if ($_GET['success'] === "tambah") {
 ?>
 
     <h3>Data mahasiswa</h3> <br>
-<a href="input_mhs.php" class="btn btn-primary mb-3">Tambah mahasiswa</a>
+<a href="tambah.php" class="btn btn-primary mb-3">Tambah mahasiswa</a>
 
 
 <table border="1" class="table">

@@ -12,6 +12,10 @@ class MahasiswaController{
     public function getAllMahasiswa(){
         return $this->model->getAllMahasiswa();
     }
+
+    public function createMahasiswa($nim, $nama, $alamat, $no_telp){
+        return $this->model->createMahasiswa($nim, $nama, $alamat, $no_telp);
+    }
 }
 
 ?>
