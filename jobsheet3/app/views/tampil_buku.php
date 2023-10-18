@@ -18,6 +18,21 @@ include 'bootstrap.php';
     <h3>Data buku</h3> <br>
 <a href="input_buku.php" class="btn btn-primary mb-3">Tambah buku</a>
 
+<?php
+if ($_GET['success'] === "tambah") {
+    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Data Buku Berhasil Di Tambahkan<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+} elseif ($_GET['success'] === "update") {
+    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Data Buku Berhasil Di Edit<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+} elseif ($_GET['success'] === "hapus") {
+    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Data Buku Berhasil Di Hapus<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+}
+?>
 
 <table border="1" class="table">
 <tr>
@@ -38,7 +53,7 @@ foreach ($db->tampil_buku() as $x){
         <td><?php echo $x['penerbit']; ?></td>
         <td>
         <a href="edit_buku.php?id=<?php echo $x['id_buku'];?>&aksi=edit" class="btn btn-warning">edit buku</a>
-        <a href="proses_buku.php?id=<?php echo $x['id_buku'];?>&aksi=hapus" class="btn btn-danger">hapus buku</a>
+        <a href="proses_buku.php?id=<?php echo $x['id_buku'];?>&aksi=hapus" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">hapus buku</a>
         </td>
     </tr>
     <?php
@@ -46,5 +61,6 @@ foreach ($db->tampil_buku() as $x){
 ?>
 </table>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

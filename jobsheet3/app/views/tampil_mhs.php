@@ -21,17 +21,17 @@ include 'bootstrap.php';
 
 <?php
 if ($_GET['success'] === "tambah") {
-    echo '<div class="alert alert-success" role="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display=\'none\';">&times;</span>
-        Mahasiswa berhasil ditambahkan.</div>';
+    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Data Mahasiswa Berhasil Di Tambahkan<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
 } elseif ($_GET['success'] === "update") {
-    echo '<div class="alert alert-warning" role="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display=\'none\';">&times;</span>
-        Mahasiswa berhasil diupdate.</div>';
+    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Data Mahasiswa Berhasil Di Edit<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
 } elseif ($_GET['success'] === "hapus") {
-    echo '<div class="alert alert-danger" role="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display=\'none\';">&times;</span>
-        Mahasiswa berhasil dihapus.</div>';
+    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Data Mahasiswa Berhasil Di Hapus<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
 }
 ?>
 
@@ -54,7 +54,7 @@ foreach ($db->tampil_mhs() as $x){
         <td><?php echo $x['alamat']; ?></td>
         <td>
         <a href="edit_mhs.php?id=<?php echo $x['nim'];?>&aksi=edit" class="btn btn-warning">edit mahasiswa</a>
-        <a href="proses_mhs.php?id=<?php echo $x['nim'];?>&aksi=hapus" class="btn btn-danger">hapus mahasiswa</a>
+        <a href="proses_mhs.php?id=<?php echo $x['nim'];?>&aksi=hapus" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">hapus mahasiswa</a>
         </td>
     </tr>
     <?php
@@ -62,5 +62,6 @@ foreach ($db->tampil_mhs() as $x){
 ?>
 </table>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
