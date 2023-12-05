@@ -1,23 +1,26 @@
 <?php
+
 include_once '../../config.php';
 include_once '../../controllers/MahasiswaController.php';
 
-$database = new Database();
-$db = $database->getkoneksi();
+$database= new database();
+$db=$database->getKoneksi();
 
 if (isset($_POST['submit'])){
     $nim = $_POST['nim'];
     $nama = $_POST['nama'];
+    $tempat_lahir = $_POST['tempat_lahir'];
+    $tanggal_lahir = $_POST['tanggal_lahir'];
+    $jenis_kelamin = $_POST['jenis_kelamin'];
+    $agama = $_POST['agama'];
     $alamat = $_POST['alamat'];
-    $no_telp = $_POST['no_telp'];
 
-    $mahasiswaController = new MahasiswaController($db);
-    $result = $mahasiswaController->createMahasiswa($nim, $nama, $alamat, $no_telp);
+    $mahasiswaController= new MahasiswaController($db);
+    $result=$mahasiswaController->createMahasiswa($nim, $nama, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $agama, $alamat);
 
-    if ($result){
-        header("Location:index.php");
+    if($result){
+        header("Location:mahasiswa");
     }else{
-        header("Location:tambah.php");
+        header("Location:tambah");
     }
 }
-?>

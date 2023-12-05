@@ -4,24 +4,16 @@ require '../../index.php';
 
 <body>
     <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
-        <h3 class="text-center">Tambah Data Mahasiswa</h3>
-        <form action="proses_tambah" method="post">
+        <h3 class="text-center">Tambah Data Dosen</h3>
+        <form action="proses_tambah_dsn" method="post">
             <table>
                 <tr>
-                    <td>NIM</td>
-                    <td><input type="text" name="nim" class="form-control"></td>
+                    <td>NIDN</td>
+                    <td><input type="text" name="nidn" class="form-control"></td>
                 </tr>
                 <tr>
                     <td>Nama</td>
                     <td><input type="text" name="nama" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td>Tempat Lahir</td>
-                    <td><input type="text" name="tempat_lahir" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td>Tanggal Lahir</td>
-                    <td><input type="date" name="tanggal_lahir" class="form-control"></td>
                 </tr>
                 <tr>
                     <td>Jenis Kelamin</td>

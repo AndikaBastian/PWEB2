@@ -1,19 +1,19 @@
 <?php
 
-class database{
-    var $host = "localhost";
-    var $username = "root";
-    var $password = "";
-    var $db = "modul4";
+class database
+{
+    var $host = 'localhost';
+    var $username = 'root';
+    var $password = '';
+    var $db = 'akademik';
     var $koneksi;
 
-    function getkoneksi(){
-        $this->koneksi = mysqli_connect($this->host,$this->username,$this->password,$this->db);
+    function getKoneksi()
+    {
+        $this->koneksi = mysqli_connect($this->host, $this->username, $this->password, $this->db);
         if(!$this->koneksi){
-            die("Gagal koneksi ke database".mysqli_connect_error());
+            die("koneksi database gagal: " . mysqli_connect_error());
         }
         return $this->koneksi;
     }
 }
-
-?>
